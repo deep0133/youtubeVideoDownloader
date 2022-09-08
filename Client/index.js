@@ -44,7 +44,7 @@ async function getFormate() {
       let mimeType = await element.mimeType.split(/;/);
       mimeType = await mimeType[0].split("/");
 
-      renderQuality.innerHTML += `<a href='http://localhost:5500/download/${element.itag}/${response.videoId}/${mimeType[1]}' target='_blank' itag='${element.itag}' type='${mimeType[1]}' id='${i}'  url='${response.videoId}'  
+      renderQuality.innerHTML += `<a href='https://ytdownloader-backend.herokuapp.com/download/${element.itag}/${response.videoId}/${mimeType[1]}' target='_blank' itag='${element.itag}' type='${mimeType[1]}' id='${i}'  url='${response.videoId}'  
        class='col flex justify-content-between align-items-center' style='max-width: fit-content; border-radius: 9px; padding: 10px 18px;margin-right: 10px;margin-bottom: 15px; cursor:pointer;background:${element.audioQuality?"#ff4564":"#45c1ff"};'>
       <span class='qaulity_number text-white d-flex justify-content-center align-items-center' style='font-weight: bolder;'>${
         element.quality ? element.quality : ""
@@ -77,22 +77,5 @@ async function getFormate() {
     }
   }
 
-  return false;
 }
 
-const downloadVidoeB = async (id) => {
-
-  const urlId  =  await document.getElementById(id).getAttribute("url")
-  const type  = await document.getElementById(id).getAttribute("type")
-  const itag  = await document.getElementById(id).getAttribute("itag")
-  
-  const backendUrl = await `https://ytdownloader-backend.herokuapp.com/download/${itag}/${urlId}/${type}`;
-
-  let response = await fetch(backendUrl, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
-};
