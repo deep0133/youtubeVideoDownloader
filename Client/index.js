@@ -3,8 +3,8 @@ let data = [];
 async function getFormate() {
 
   document.getElementById("loader").style.display = "block"
-  const backendUrl = "http://localhost:5500/video/data";
-
+//   const backendUrl = "http://localhost:5500/video/data";
+  const backendUrl = "https://ytdownloader-backend.herokuapp.com/video/data";
   let renderQuality = document.getElementById("renderQuality");
 
   // Clear all previous data:
@@ -86,7 +86,7 @@ const downloadVidoeB = async (id) => {
   const type  = await document.getElementById(id).getAttribute("type")
   const itag  = await document.getElementById(id).getAttribute("itag")
   
-  const backendUrl = await `http://localhost:5500/download/${itag}/${urlId}/${type}`;
+  const backendUrl = await `https://ytdownloader-backend.herokuapp.com/download/${itag}/${urlId}/${type}`;
 
   let response = await fetch(backendUrl, {
     method: "GET",
