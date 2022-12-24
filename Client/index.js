@@ -4,7 +4,7 @@ async function getFormate() {
 
   document.getElementById("loader").style.display = "block"
 //   const backendUrl = "http://localhost:5500/video/data";
-  const backendUrl = "https://ytdownloader-backend.herokuapp.com/video/data";
+  const backendUrl = "https://ytdownloader-o3ta.onrender.com";
   let renderQuality = document.getElementById("renderQuality");
 
   // Clear all previous data:
