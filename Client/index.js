@@ -44,7 +44,7 @@ async function getFormate() {
       let mimeType = await element.mimeType.split(/;/);
       mimeType = await mimeType[0].split("/");
 
-      renderQuality.innerHTML += `<a href='https://ytdownloader-backend.herokuapp.com/download/${element.itag}/${response.videoId}/${mimeType[1]}' target='_blank' itag='${element.itag}' type='${mimeType[1]}' id='${i}'  url='${response.videoId}'  
+      renderQuality.innerHTML += `<a href='https://ytdownloader-o3ta.onrender.com/download/${element.itag}/${response.videoId}/${mimeType[1]}' target='_blank' itag='${element.itag}' type='${mimeType[1]}' id='${i}'  url='${response.videoId}'  
        class='col flex justify-content-between align-items-center' style='max-width: fit-content; border-radius: 9px; padding: 10px 18px;margin-right: 10px;margin-bottom: 15px; cursor:pointer;background:${element.audioQuality?"#ff4564":"#45c1ff"};'>
       <span class='qaulity_number text-white d-flex justify-content-center align-items-center' style='font-weight: bolder;'>${
         element.quality ? element.quality : ""
